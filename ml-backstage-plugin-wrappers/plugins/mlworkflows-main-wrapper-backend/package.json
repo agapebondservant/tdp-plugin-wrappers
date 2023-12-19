@@ -1,0 +1,50 @@
+{
+  "name": "@oawofolu/plugin-mlworkflows-main-wrapper-backend",
+  "version": "0.1.6",
+  "main": "dist/index.cjs.js",
+  "types": "dist/index.d.ts",
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public",
+    "main": "dist/index.cjs.js",
+    "types": "dist/index.d.ts"
+  },
+  "backstage": {
+    "role": "backend-plugin"
+  },
+  "scripts": {
+    "start": "backstage-cli package start",
+    "build": "backstage-cli package build",
+    "lint": "backstage-cli package lint",
+    "test": "backstage-cli package test",
+    "clean": "backstage-cli package clean",
+    "prebuild": "rm -rf dist",
+    "prepack": "backstage-cli package prepack",
+    "postpack": "backstage-cli package postpack",
+    "postbuild": "rm dist/**.map"
+  },
+  "dependencies": {
+    "@backstage/backend-common": "^0.19.4",
+    "@backstage/config": "^1.1.0",
+    "@oawofolu/plugin-mlworkflows-backend": "0.4.9",
+    "@types/express": "*",
+    "@vmware-tanzu/core-backend": "1.0.0",
+    "express": "^4.17.1",
+    "express-promise-router": "^4.1.0",
+    "node-cache": "^5.1.2",
+    "node-fetch": "^2.6.7",
+    "winston": "^3.2.1",
+    "yn": "^4.0.0"
+  },
+  "devDependencies": {
+    "@backstage/cli": "^0.22.8",
+    "@types/supertest": "^2.0.12",
+    "msw": "^1.0.0",
+    "supertest": "^6.2.4"
+  },
+  "files": [
+    "dist"
+  ],
+  "description": "Welcome to the mlworkflows-main-wrapper backend plugin!",
+  "author": ""
+}
